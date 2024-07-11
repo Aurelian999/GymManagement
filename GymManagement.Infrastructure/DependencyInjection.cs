@@ -1,5 +1,4 @@
-﻿using GymManagement.Application.CreateSubscription;
-using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.Extensions.DependencyInjection;
 
 namespace GymManagement.Infrastructure
 {
@@ -7,7 +6,6 @@ namespace GymManagement.Infrastructure
     {
         public static IServiceCollection AddInfrastructure(this IServiceCollection services)
         {
-            services.AddScoped<ISubscriptionsService, SubscriptionsService>();
 
             return services;
         }
