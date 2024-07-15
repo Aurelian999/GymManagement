@@ -1,0 +1,28 @@
+name: Publish
+
+on:
+  workworkflow_dispatch:
+  push:
+    branbranches: 
+      - main
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Setup .NET
+        uses: acttions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.0.x'
+
+      - name: Restore
+        run: dotnet restore ./GymManagement.sln
+
+      - name: Build
+        run: dotnet build ./GymManagement.sln --configuration Release --no-restore
+
+      - name: Publish
+        run: dotnet publish ./GymManagement.sln -- configuration Release --no-build
