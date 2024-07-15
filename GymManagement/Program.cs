@@ -15,7 +15,7 @@ builder.Services.AddInfrastructure();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
-if (app.Environment.IsDevelopment())
+if (app.Environment.IsDevelopment() || app.Environment.IsProduction()) // TODO this is used just for demonstration purpose so it can be enabled on PROD too
 {
     app.UseSwagger();
     app.UseSwaggerUI();
