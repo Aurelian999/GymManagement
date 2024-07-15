@@ -1,9 +1,9 @@
 name: Publish
 
 on:
-  workworkflow_dispatch:
+  workflow_dispatch:
   push:
-    branbranches: 
+    branches: 
       - main
 
 jobs:
